@@ -12,5 +12,8 @@
   - volumes are Pod specific
   - volume lifetime depends on the Pod lifeetime
   - volumes survive Container restarts / removal but are removed when Pods are destroyed
+    - this means that data is not necessarily persistant in k8
+    - whereas in Docker volumes do persist until manually cleared
+- 
 
 
