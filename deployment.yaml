@@ -14,4 +14,10 @@ spec:
     spec:
       containers:
         - name: story
-          image: academind/kub-data-demo
+          image: willnjl/kub-data-demo:1
+          volumeMounts:
+            - mountPath: /app/story/ #internal path for the directory
+              name: story-volumes
+      volumes:
+        - name: story-volumes
+          emptyDir: {} #empty object indidicates defaults
