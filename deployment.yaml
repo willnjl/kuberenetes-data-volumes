@@ -20,4 +20,7 @@ spec:
               name: story-volumes
       volumes:
         - name: story-volumes
-          emptyDir: {} #empty object indidicates defaults
+          # emptyDir: {} #empty object indidicates defaults
+          hostPath:
+            path: /data
+            type: DirectoryOrCreate #how the path should be handled - here is  find directory or create if doesnt exist
