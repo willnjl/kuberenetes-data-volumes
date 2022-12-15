@@ -23,10 +23,13 @@ spec:
                   name: data-store-env
                   key: folder
           volumeMounts:
-            - mountPath: /app/story
+            - mountPath: /app/story #internal path for accessing volume
               name: story-volume
       volumes:
         - name: story-volume
-          # emptyDir: {}
+          # emptyDir: {} #empty object indeicates defaults
+          # hostPath:
+            # path: /data #where on the host machine to write the data here. make sure you are not overwriting anything
+            # tpye: DirectoryOrCreate # how the path should be handled -here it should be created if doesnt exist
           persistentVolumeClaim:
             claimName: host-pvc
