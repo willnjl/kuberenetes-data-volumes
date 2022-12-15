@@ -1,5 +1,6 @@
 # Data and Volumes with Docker and Kubernetes
 
+## Volumes
 ### Theory and Docker Comparison
 
 - k8 can mount volumes into containers
@@ -16,6 +17,12 @@
     - whereas in Docker volumes do persist until manually cleared
 - volumes are defined in the pod specification in deployment
 - next to containers (same level)
+
+#### summary 
+ 
+ - Volume is attached to pod and pod lifecylce
+ - Defined and created together with Pod
+ - Repetitive and hard to administer on a global level
 
 ### emptyDir
 
@@ -44,3 +51,8 @@
 
 
 
+## Persistant Volumes
+
+- Volume is a standalone Cluster Resource (NOT attached to a pod)
+- Stand alone creation, claimed by PVC
+- Defined once and used multiple times
